@@ -9,24 +9,20 @@
 
 int print_last_digit(int a)
 {
-int r;
 int b;
 
 /* making number absolute */
 	if (a < 0)
 	{
-		r = -a;
+		a = -a;
 	}
 
-	else
-	{
-		r = a;
-	}
+
 
 /* returning the last digit */
 
 
-		b = r % 10;
+		b = a % 10;
 
 
 	_putchar(b + '0');
