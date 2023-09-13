@@ -22,8 +22,13 @@ int b;
 /* returning the last digit */
 
 
-		b = a % 10;
+	b = a % 10;
 
+
+	if (b < 0)
+	{
+		b = -b;
+	}
 
 	_putchar(b + '0');
 
