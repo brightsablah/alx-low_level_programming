@@ -25,13 +25,9 @@ int b;
 
 /* returning the last digit */
 
-	b = r;
 
-	while (r > 9)
-	{
-		r = r % 10;
-		b = r;
-	}
+		b = r % 10;
+
 
 	_putchar(b + '0');
 
