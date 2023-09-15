@@ -11,7 +11,7 @@
 
 void print_number(int n)
 {
-	int divisor, digit;
+	unsigned int divisor, digit;
 
 
 	if (n < 0)
