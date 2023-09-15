@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
-* print_nost_numbers - prints numbers from 0 - 9 not 2 and 4
+* print_most_numbers - prints numbers from 0 - 9 not 2 and 4
 * Description:
 *
 * Return: Always 0 (Success)
