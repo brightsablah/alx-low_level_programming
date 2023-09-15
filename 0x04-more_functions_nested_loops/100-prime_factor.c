@@ -11,6 +11,7 @@
 int main(void)
 {
 	unsigned long int factor, num;
+
 	num = 612852475143;
 
 	for (factor = 3; factor < 99785838; factor = factor + 2)
