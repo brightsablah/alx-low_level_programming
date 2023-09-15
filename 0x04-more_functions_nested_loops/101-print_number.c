@@ -2,7 +2,8 @@
 #include "main.h"
 
 /**
-* main - Entry point
+* print_number - prints an integer value
+* @n: input integer
 * Description:
 *
 * Return: Always 0 (Success)
