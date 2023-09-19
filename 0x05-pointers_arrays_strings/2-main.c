@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
-* main - check the code
+* main - test the code
 *
 * Return: Always 0.
 */
