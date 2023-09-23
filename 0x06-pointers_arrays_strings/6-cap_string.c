@@ -1,140 +1,33 @@
 #include <stdio.h>
 
 /**
-* string_toupper - converts lower case in a string to upper case
-* Description: decreases ascii value of characters to change thier
-*					case from lower to upper
-*	@str: pointer to specified string
-* Return: Pointer to string
+* cap_string - capitalizes a string
+* Description: converts all charactersa fter specified delimeters
+* int ouppercase
+* @str: pointer to string input
+* Return: Pointer to converted string
 */
+
 
 char *cap_string(char *str)
 {
-	int i;
+	int i, j;
+	char delimeter[] = " \t\n,;.!?\"(){}";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-
-		switch (str[i])
+		for (j = 0; delimeter[j] != '\0'; j++)
 		{
-			case ' ':
+			if (str[i + 1] >= 'a' && str[i + 1] <= 'z' && str[i] == delimeter[j])
 			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] = str[i + 1] - 32;
-				}
-				break;
+				str[i + 1] = str[i + 1] - 32;
 			}
-
-			case '\t':
+			else if (i == 0 && str[i] >= 'a' && str[i] <= 'z')
 			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] = str[i + 1] - 32;
-				}
-				break;
+				str[i] = str[i] - 32;
 			}
-
-
-			case '\n':
-			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] = str[i + 1] - 32;
-				}
-				break;
-			}
-		
-
-			case ',':
-			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] = str[i + 1] - 32;
-				}
-				break;
-			}
-
-			case ';':
-			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] = str[i + 1] - 32;
-				}
-				break;
-			}
-			case '.':
-			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] = str[i + 1] - 32;
-				}
-				break;
-			}
-			case '!':
-			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] = str[i + 1] - 32;
-				}
-				break;
-			}
-			case '?':
-			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] = str[i + 1] - 32;
-				}
-				break;
-			}
-			case '"':
-			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] = str[i + 1] - 32;
-				}
-				break;
-			}
-			case '(':
-			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] = str[i + 1] - 32;
-				}
-				break;
-			}
-
-			case ')':
-			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] = str[i + 1] - 32;
-				}
-				break;
-			}
-
-			case '{':
-			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] = str[i + 1] - 32;
-				}
-				break;
-			}
-
-			case '}':
-			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					str[i + 1] = str[i + 1] - 32;
-				}
-				break;
-			}
-
 		}
-
 	}
-
 return (str);
 
 }
