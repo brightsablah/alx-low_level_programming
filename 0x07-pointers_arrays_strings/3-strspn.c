@@ -5,7 +5,7 @@
  * Description:
  * @s: pointer to string
  * @accept: prefix substring
- * Return: integer length of prefix substring
+ * Return: unsigned integer length of prefix substring
  */
 
 unsigned int _strspn(char *s, char *accept)
