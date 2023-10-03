@@ -31,7 +31,8 @@ char **strtow(char *str)
 		{
 			if (!inWord)
 			{
-				inWord = 1;	word_length = 1;
+				inWord = 1;
+				word_length = 1;
 			}
 			else
 				word_length++;
@@ -43,9 +44,7 @@ char **strtow(char *str)
 			if (words[word_index] == NULL)
 			{
 				for (i = 0; i < numWords; i++)
-				{
 					free(words[i]);
-				}
 				free(words);
 				return (NULL);
 			}
