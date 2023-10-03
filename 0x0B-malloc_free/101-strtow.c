@@ -18,6 +18,21 @@ char **strtow(char *str)
 	{
 		return (NULL);
 	}
+
+	allSpaces = 1;
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] != ' ')
+		{
+			allSpaces = 0;
+			break;
+		}
+	}
+	if (allSpaces)
+	{
+		return (NULL);
+	}
+
 	numWords = word_count(str);
 	words = (char **)malloc((numWords + 1) * sizeof(char *));
 	if (words == NULL)
