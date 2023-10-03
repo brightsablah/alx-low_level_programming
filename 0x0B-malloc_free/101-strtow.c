@@ -21,8 +21,8 @@ char **strtow(char *str)
 		return (NULL);
 	numWords = word_count(str);
 	words = (char **)malloc((numWords + 1) * sizeof(char *));
-	if (words == NULL)
-		return (NULL);
+	/*if (words == NULL) */
+		/*return (NULL); */
 	while (*str)
 	{
 		if (*str == ' ')
