@@ -12,5 +12,8 @@ int _strlen(char *s);
 char **strtow(char *str);
 int word_count(char *str);
 char *_strncpy(char *dest, char *src, int n);
+int all_spaces(char *str);
+char *allocate_word(char *str, int length);
+
 
 #endif

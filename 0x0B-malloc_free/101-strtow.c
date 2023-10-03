@@ -15,69 +15,68 @@ char **strtow(char *str)
 	char **words = NULL;
 
 	if (str == NULL || *str == '\0' || (str[0] == ' ' && str[1] == '\0'))
-	{
 		return (NULL);
-	}
-
-	allSpaces = 1;
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (str[i] != ' ')
-		{
-			allSpaces = 0;
-			break;
-		}
-	}
+	allSpaces = all_spaces(str);
 	if (allSpaces)
-	{
 		return (NULL);
-	}
-
 	numWords = word_count(str);
 	words = (char **)malloc((numWords + 1) * sizeof(char *));
 	if (words == NULL)
-	{
 		return (NULL);
-	}
-
 	while (*str)
 	{
 		if (*str == ' ')
-		{
 			inWord = 0;
-		}
 		else
 		{
 			if (!inWord)
 			{
-				inWord = 1;
-				word_length = 1;
+				inWord = 1;	word_length = 1;
 			}
 			else
-			{
 				word_length++;
-			}
 		}
 		str++;
 		if ((!*str || *str == ' ') && inWord)
 		{
-			words[word_index] = (char *)malloc((word_length + 1) * sizeof(char));
+			words[word_index] = allocate_word(str, word_length);
 			if (words[word_index] == NULL)
 			{
-				for (i = 0; i < word_index; i++)
+				for (i = 0; i < numWords; i++)
 				{
 					free(words[i]);
 				}
 				free(words);
 				return (NULL);
 			}
-			_strncpy(words[word_index], str - word_length, word_length);
-			words[word_index][word_length] = '\0';
 			word_index++;
 		}
 	}
 	words[numWords] = NULL;
 	return (words);
+}
+
+
+/**
+* all_spaces - checks if a string is all spaces
+* @str: input string
+*
+* Return: flag 0 - if it is all spaces.  1 - if it is not all spaces
+*/
+
+int all_spaces(char *str)
+{
+	int flag = 1, i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] != ' ')
+		{
+			flag = 0;
+			break;
+		}
+	}
+	return (flag);
 }
 
 
@@ -138,3 +137,26 @@ char *_strncpy(char *dest, char *src, int n)
 	return (dest);
 
 }
+
+/**
+ * allocate_word - allocate memory and copy a word from the string
+ * @str: string to copy the word from
+ * @length: length of the word
+ *
+ * Return: pointer to the allocated word
+ */
+
+char *allocate_word(char *str, int length)
+{
+	char *word = (char *)malloc((length + 1) * sizeof(char));
+
+	if (word == NULL)
+	{
+		return (NULL);
+	}
+
+	_strncpy(word, str - length, length);
+	word[length] = '\0';
+	return (word);
+}
+
