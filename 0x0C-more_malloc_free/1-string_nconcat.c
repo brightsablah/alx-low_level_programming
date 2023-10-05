@@ -17,13 +17,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int len1 = 0, len2 = 0, i;
 
 	if (s1 != NULL)
-	{
 		len1 = _strlen_recursion(s1);
-	}
+	else
+		len1 = 0;
 	if (s2 != NULL)
-	{
 		len2 = _strlen_recursion(s2);
-	}
+	else
+		len2 = 0;
+
 	if (s2[0] == '\0')
 	{
 		n = 0;
