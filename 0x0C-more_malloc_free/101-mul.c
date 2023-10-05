@@ -12,13 +12,36 @@
 */
 int main(int argc, char *argv[])
 {
-	int count1 = 0, count2 = 0, len1, len2;
+	int count1 = 0, count2 = 0, len1, len2, i;
 	int *mul_result = NULL;
 	char *num1 = NULL, *num2 = NULL, *result = NULL;
 
 	if (argc != 3)
 	{
 		_puts("Error");
+		exit(98);
+	}
+/*
+	while (argv[1][i] != '\0')
+	{
+		if (!_isdigit(argv[1][i]))
+		{
+			_puts("Error");
+			exit(98);
+		}
+		i++;
+	}
+*/
+
+	if (!_str_number(argv, 1))
+	{
+		_puts("Error, arg1 not number");
+		exit(98);
+	}
+
+	if (!_str_number(argv, 2))
+	{
+		_puts("Error, arg2 not number");
 		exit(98);
 	}
 
@@ -48,6 +71,32 @@ int main(int argc, char *argv[])
 return (0);
 }
 
+/**
+* _str_number - checks if a string consists of only numbers
+* @str: array of strings
+* @n: particular string array to check
+*
+* Return: 1 if all characters are int, 0 otherwise
+*/
+
+int _str_number(char **str, int n)
+{
+	int i, flag;
+
+	i = 0;
+	flag = 1;
+
+	while (str[n][i] != '\0')
+	{
+		if (!_isdigit(str[n][i]))
+		{
+			flag = 0;
+			return (flag);
+		}
+		i++;
+	}
+	return (flag);
+}
 
 
 /**

@@ -19,6 +19,8 @@ int _strlen(char *s);
 int _putchar(char c);
 void _puts(char *str);
 char *_strcpy(char *dest, char *src);
+int _isdigit(int c);
+int _str_number(char **str, int n);
 
 
 #endif
