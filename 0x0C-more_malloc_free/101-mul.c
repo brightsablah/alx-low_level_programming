@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-#include <unistd.h>
 
 
 /**
@@ -13,16 +12,18 @@
 */
 int main(int argc, char *argv[])
 {
-	int i, j, k, product, add_carry, count1 = 0, count2 = 0, len1, len2;
+	int count1 = 0, count2 = 0, len1, len2;
 	int *mul_result = NULL;
-	char *result = NULL;
+	char *num1 = NULL, *num2 = NULL, *result = NULL;
 
 	if (argc != 3)
 	{
 		_puts("Error");
 		exit(98);
 	}
-	char *num1 = argv[1], *num2 = argv[2];
+
+	num1 = argv[1];
+	num2 = argv[2];
 
 	while (argv[1][count1] != '\0')
 		count1++;
@@ -159,18 +160,6 @@ void _puts(char *str)
 
 }
 
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
 
 
 /**
