@@ -85,10 +85,10 @@ int _str_number(char **str, int n)
 * str_mul- multiplies two strings
 * @num1: first number
 * @num2: second number
-* @len1: length of first number
-* @len2: length of second number
-* @mul_result: array to temporalily store results
-* @result: final result in the form of string
+* @l1: length of first number
+* @l2: length of second number
+* @m_res: array to temporalily store results
+* @res: final result in the form of string
 *
 * Return: void
 */
