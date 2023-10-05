@@ -51,7 +51,6 @@ return (0);
 }
 
 
-
 /**
 * _str_number - checks if a string consists of only numbers
 * @str: array of strings
@@ -78,7 +77,6 @@ int _str_number(char **str, int n)
 	}
 	return (flag);
 }
-
 
 
 /**
@@ -135,7 +133,6 @@ void str_mul(char *num1, char *num2, int l1, int l2, int *m_res, char *res)
 }
 
 
-
 /**
 * my_calloc - allocates memory using malloc
 * Description:
@@ -172,7 +169,6 @@ void *my_calloc(int nmemb, int size)
 }
 
 
-
 /**
 * _puts - prints a string
 * Description:
@@ -191,7 +187,6 @@ void _puts(char *str)
 	_putchar('\n');
 
 }
-
 
 
 /**
