@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "main.h"
 #include <unistd.h>
-#include <string.h>
 
 
 /**
@@ -82,8 +81,8 @@ void str_mul(char *num1, char *num2, int len1, int len2, int *mul_result, char *
 
 	if (k == len1 + len2)
 	{
-		strcpy(result, "0");
-		printf("0");
+		_strcpy(result, "0");
+		_puts(result);
 		free(mul_result);
 		free(result);
 		exit(0);
@@ -195,5 +194,41 @@ int _isdigit(int c)
 	}
 
 return (r);
+
+}
+
+
+/**
+* _strcpy - copies a string to the buffer
+* Description:
+* @dest: pointer to a buffer
+* @src: input string to be copied
+* Return: char ( the copied string)
+*/
+
+char *_strcpy(char *dest, char *src)
+{
+	char *cpy;
+	int len, i;
+
+	len = 0;
+	i = 0;
+
+	while (src[i] != '\0')
+	{
+		len++;
+		i++;
+	}
+
+	for (i = 0; i < len; i++)
+	{
+		dest[i] = src[i];
+	}
+
+	dest[len] = '\0';
+
+	cpy = dest;
+
+return (cpy);
 
 }
