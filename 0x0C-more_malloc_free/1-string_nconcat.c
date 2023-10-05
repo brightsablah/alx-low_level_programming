@@ -24,11 +24,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len2 = _strlen_recursion(s2);
 	else
 		len2 = 0;
-
-	if (s2[0] == '\0')
-	{
-		n = 0;
-	}
+/*
+*	if (s2[0] == '\0')
+*	{
+*		n = 0;
+*	}
+*/
 	if (n < len2)
 	{
 		len2 = n;
