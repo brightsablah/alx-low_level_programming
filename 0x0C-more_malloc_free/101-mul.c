@@ -12,7 +12,7 @@
 */
 int main(int argc, char *argv[])
 {
-	int count1 = 0, count2 = 0, len1, len2, i;
+	int count1 = 0, count2 = 0, len1, len2;
 	int *mul_result = NULL;
 	char *num1 = NULL, *num2 = NULL, *result = NULL;
 
@@ -21,40 +21,19 @@ int main(int argc, char *argv[])
 		_puts("Error");
 		exit(98);
 	}
-/*
-	while (argv[1][i] != '\0')
+	if (!_str_number(argv, 1) || !_str_number(argv, 2))
 	{
-		if (!_isdigit(argv[1][i]))
-		{
-			_puts("Error");
-			exit(98);
-		}
-		i++;
-	}
-*/
-
-	if (!_str_number(argv, 1))
-	{
-		_puts("Error, arg1 not number");
+		_puts("Error");
 		exit(98);
 	}
-
-	if (!_str_number(argv, 2))
-	{
-		_puts("Error, arg2 not number");
-		exit(98);
-	}
-
 	num1 = argv[1];
 	num2 = argv[2];
-
 	while (argv[1][count1] != '\0')
 		count1++;
 	len1 = count1;
 	while (argv[2][count2] != '\0')
 		count2++;
 	len2 = count2;
-
 	mul_result = (int *)(my_calloc(len1 + len2, sizeof(int)));
 	if (mul_result == NULL)
 	{
