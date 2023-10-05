@@ -13,7 +13,7 @@ void strmul(char *num1, char *num2, char *result);
 int _strlen(char *s);
 void *int_calloc(int nmemb, int size);
 
-void str_mul(char *num1, char *num2, int len1, int len2, int *mul_result, char *result);
+void str_mul(char *num1, char *num2, int l1, int l2, int *m_res, char *res);
 void *my_calloc(int nmemb, int size);
 int _strlen(char *s);
 int _putchar(char c);

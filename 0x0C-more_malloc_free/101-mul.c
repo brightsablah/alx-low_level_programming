@@ -50,6 +50,8 @@ int main(int argc, char *argv[])
 return (0);
 }
 
+
+
 /**
 * _str_number - checks if a string consists of only numbers
 * @str: array of strings
@@ -78,6 +80,7 @@ int _str_number(char **str, int n)
 }
 
 
+
 /**
 * str_mul- multiplies two strings
 * @num1: first number
@@ -89,7 +92,7 @@ int _str_number(char **str, int n)
 *
 * Return: void
 */
-void str_mul(char *num1, char *num2, int len1, int len2, int *mul_result, char *result)
+void str_mul(char *num1, char *num2, int len1, int len2, int *m_res, char *res)
 {
 	int i, j, k, add_carry, product;
 
@@ -98,38 +101,39 @@ void str_mul(char *num1, char *num2, int len1, int len2, int *mul_result, char *
 		for (j = len1 - 1; j >= 0; j--)
 		{
 			product = (num2[i] - '0') * (num1[j] - '0');
-			add_carry = product + mul_result[i + j + 1];
-			mul_result[i + j + 1] = add_carry % 10;
-			mul_result[i + j] += add_carry / 10;
+			add_carry = product + m_res[i + j + 1];
+			m_res[i + j + 1] = add_carry % 10;
+			m_res[i + j] += add_carry / 10;
 		}
 	}
 
 	k = 0;
-	while (k < len1 + len2 && mul_result[k] == 0)
+	while (k < len1 + len2 && m_res[k] == 0)
 	k++;
 
 	if (k == len1 + len2)
 	{
-		_strcpy(result, "0");
-		_puts(result);
-		free(mul_result);
-		free(result);
+		_strcpy(res, "0");
+		_puts(res);
+		free(m_res);
+		free(res);
 		exit(0);
 	}
 	else
 	{
 		for (i = 0; k < len1 + len2; i++, k++)
 		{
-			result[i] = mul_result[k] + '0';
+			res[i] = m_res[k] + '0';
 		}
-		result[len1 + len2 - k + i] = '\0';
+		res[len1 + len2 - k + i] = '\0';
 
-		_puts(result);
+		_puts(res);
 
-		free(mul_result);
-		free(result);
+		free(m_res);
+		free(res);
 	}
 }
+
 
 
 /**
