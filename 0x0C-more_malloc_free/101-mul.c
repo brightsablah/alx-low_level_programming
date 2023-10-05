@@ -92,13 +92,13 @@ int _str_number(char **str, int n)
 *
 * Return: void
 */
-void str_mul(char *num1, char *num2, int len1, int len2, int *m_res, char *res)
+void str_mul(char *num1, char *num2, int l1, int l2, int *m_res, char *res)
 {
 	int i, j, k, add_carry, product;
 
-	for (i = len2 - 1; i >= 0; i--)
+	for (i = l2 - 1; i >= 0; i--)
 	{
-		for (j = len1 - 1; j >= 0; j--)
+		for (j = l1 - 1; j >= 0; j--)
 		{
 			product = (num2[i] - '0') * (num1[j] - '0');
 			add_carry = product + m_res[i + j + 1];
@@ -108,10 +108,10 @@ void str_mul(char *num1, char *num2, int len1, int len2, int *m_res, char *res)
 	}
 
 	k = 0;
-	while (k < len1 + len2 && m_res[k] == 0)
+	while (k < l1 + l2 && m_res[k] == 0)
 	k++;
 
-	if (k == len1 + len2)
+	if (k == l1 + l2)
 	{
 		_strcpy(res, "0");
 		_puts(res);
@@ -121,11 +121,11 @@ void str_mul(char *num1, char *num2, int len1, int len2, int *m_res, char *res)
 	}
 	else
 	{
-		for (i = 0; k < len1 + len2; i++, k++)
+		for (i = 0; k < l1 + l2; i++, k++)
 		{
 			res[i] = m_res[k] + '0';
 		}
-		res[len1 + len2 - k + i] = '\0';
+		res[l1 + l2 - k + i] = '\0';
 
 		_puts(res);
 
