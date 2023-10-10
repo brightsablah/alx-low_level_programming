@@ -2,11 +2,11 @@
 #include "dog.h"
 
 /**
- * print_dog - prints a struct dog
- * @d: pointer to structure
- *
+ * print_dog - prints struct dog
+ * @d: pointer to struct dog
  * Return: void
  */
+
 void print_dog(struct dog *d)
 {
 	if (d != NULL)
