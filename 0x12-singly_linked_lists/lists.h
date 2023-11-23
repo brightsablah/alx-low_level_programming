@@ -30,20 +30,4 @@ list_t *add_node(list_t **head, const char *str);
 list_t *add_node_end(list_t **head, const char *str);
 void free_list(list_t *head);
 
-/**
-* print_string - prints string
-* @str: input string
-*
-*
-void print_string(char *str)
-{
-	int i = 0;
-
-	while (str[i] != '\0')
-	{
-		_putchar(str[i]);
-		i++;
-	}
-}
-*/
 #endif
